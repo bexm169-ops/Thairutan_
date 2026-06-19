@@ -1,0 +1,8 @@
+{
+    "name": "bkk-welfare-matcher/app",
+    "description": "BKK Welfare Matcher - ระบบเช็คสิทธิ์สวัสดิการ กทม.",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    }
+}

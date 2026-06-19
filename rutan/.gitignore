@@ -1,0 +1,4 @@
+# ไม่ commit ไฟล์ที่ตั้งค่ารหัสผ่านแบบเปิดเผย หรือไฟล์ทดสอบ
+setup_test_passwords.php
+.env
+*.log
