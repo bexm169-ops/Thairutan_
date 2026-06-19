@@ -1,0 +1,37 @@
+/* ==========================================================================
+   PAGE: ABOUT (เกี่ยวกับเรา)
+   ========================================================================== */
+.about-container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; gap: 50px; }
+
+.about-hero { text-align: center; }
+.hero-badge { display: inline-block; background-color: rgba(255, 178, 0, 0.1); color: var(--accent-gold); border: 1px solid rgba(255, 178, 0, 0.3); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+.about-hero .hero-title { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 20px; }
+.hero-desc { font-size: 15px; color: var(--text-muted); line-height: 1.6; max-width: 700px; margin: 0 auto; }
+.hero-desc strong { color: var(--accent-gold); }
+
+.grid-two-cols { display: grid; grid-template-columns: 1fr; gap: 25px; }
+.mission-card { background-color: var(--bg-surface); border: 1px solid var(--border-light); padding: 30px; border-radius: var(--radius-md); transition: var(--transition); }
+.mission-card-highlight { background-color: var(--bg-surface-hover); border: 1px solid rgba(255, 178, 0, 0.3); padding: 30px; border-radius: var(--radius-md); position: relative; overflow: hidden; }
+.mission-card-highlight::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background-color: var(--accent-gold); }
+.sub-title, .sub-title-highlight { font-size: 18px; font-weight: 600; margin-bottom: 15px; }
+.sub-title { color: var(--accent-gold); }
+.section-text, .section-text-highlight { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+.section-center-title { font-size: 22px; font-weight: 600; text-align: center; margin-bottom: 30px; }
+.features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.feature-box { background-color: var(--bg-surface); border: 1px solid var(--border-light); padding: 25px; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 12px; }
+.feature-icon { font-size: 24px; width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.icon-gold { background-color: rgba(255, 178, 0, 0.1); color: var(--accent-gold); }
+.icon-green { background-color: rgba(104, 211, 145, 0.1); color: var(--accent-green); }
+.icon-blue { background-color: rgba(49, 130, 206, 0.2); color: #63b3ed; }
+.feature-box h3 { font-size: 16px; font-weight: 600; }
+.feature-box p { font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+
+/* Desktop View */
+@media (min-width: 768px) {
+    .about-hero .hero-title { font-size: 44px; }
+    .hero-desc { font-size: 16px; }
+    .grid-two-cols { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .features-grid { grid-template-columns: 1fr 1fr 1fr; gap: 25px; }
+    .feature-box { padding: 30px 25px; }
+}

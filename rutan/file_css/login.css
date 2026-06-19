@@ -1,0 +1,58 @@
+/* ==========================================================================
+   PAGE: LOGIN & REGISTER
+   ========================================================================== */
+.auth-page { display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 150px); padding: 20px; }
+.auth-container { width: 100%; max-width: 480px; }
+.auth-card { background-color: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 40px 30px; }
+.auth-card-wide { max-width: 600px; }
+.auth-container.auth-card-wide { max-width: 600px; }
+
+.auth-title { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+.auth-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.5; }
+
+.alert { padding: 12px 15px; border-radius: var(--radius-sm); font-size: 14px; margin-bottom: 20px; }
+.alert-error   { background: rgba(252, 129, 129, 0.1); border: 1px solid rgba(252,129,129,0.4); color: #fc8181; }
+.alert-success { background: rgba(104,211,145,0.1); border: 1px solid rgba(104,211,145,0.4); color: var(--accent-green); }
+
+.auth-form { display: flex; flex-direction: column; gap: 18px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 14px; font-weight: 500; color: var(--text-main); }
+.form-group input, .form-group select {
+    padding: 12px 15px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light); background: var(--bg-base);
+    color: var(--text-main); font-size: 14px; outline: none; font-family: 'Sarabun', sans-serif;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--accent-gold); }
+.form-group select option { background: var(--bg-base); }
+.form-hint { font-size: 12px; color: var(--text-muted); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.btn-full { width: 100%; margin-top: 5px; }
+
+.auth-divider { text-align: center; margin: 20px 0; color: var(--text-muted); font-size: 13px; position: relative; }
+.auth-divider::before, .auth-divider::after { content: ''; position: absolute; top: 50%; width: 40%; height: 1px; background: var(--border-light); }
+.auth-divider::before { left: 0; }
+.auth-divider::after  { right: 0; }
+.auth-footer-text { text-align: center; font-size: 14px; color: var(--text-muted); margin-bottom: 10px; }
+.link-gold  { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
+.link-gold:hover { text-decoration: underline; }
+.link-muted { color: var(--text-muted); text-decoration: none; }
+.link-muted:hover { color: var(--text-main); }
+
+/* ──── login-prompt สำหรับ my-rights.php ──── */
+.login-prompt { text-align: center; padding: 60px 20px; }
+.login-prompt h2 { font-size: 22px; margin-bottom: 12px; }
+.login-prompt p  { color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+
+/* ──── user-greeting ใน header ──── */
+.user-greeting { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; white-space: nowrap; }
+
+@media (max-width: 767px) {
+    .form-row { grid-template-columns: 1fr; }
+    .auth-card { padding: 30px 20px; }
+}
+
+.status-unverified {
+    display: inline-block; padding: 4px 12px;
+    background: rgba(252,129,129,0.1); border: 1px solid rgba(252,129,129,0.5);
+    color: #fc8181; border-radius: 20px; font-size: 12px;
+}

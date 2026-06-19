@@ -1,0 +1,51 @@
+/* ==========================================================================
+   PAGE: WELFARE (สวัสดิการทั้งหมด)
+   ========================================================================== */
+.welfare-page { padding: 30px 20px; }
+.welfare-header { text-align: center; margin-bottom: 30px; }
+.page-title { font-size: 24px; margin-bottom: 10px; font-weight: 700; }
+.page-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+
+.search-box { display: flex; gap: 10px; margin-bottom: 20px; }
+.search-box input {
+    flex: 1; padding: 12px 15px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light); background: var(--bg-surface); color: white; outline: none;
+}
+.search-box input:focus { border-color: var(--accent-gold); }
+
+.filter-tags { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; white-space: nowrap; }
+.tag {
+    background: transparent; border: 1px solid var(--border-light); color: var(--text-muted); 
+    padding: 8px 16px; border-radius: 20px; cursor: pointer; text-decoration: none; font-size: 13px; transition: var(--transition);
+}
+.tag.active, .tag:hover { background: var(--border-light); color: var(--accent-gold); border-color: var(--accent-gold); }
+
+/* กล่องการ์ดสวัสดิการแบบ Modern */
+.grid-container { display: flex; flex-direction: column; gap: 20px; }
+.welfare-card {
+    background-color: var(--bg-surface); border: 1px solid var(--border-light);
+    border-radius: var(--radius-md); padding: 25px; display: flex; flex-direction: column; gap: 15px;
+    transition: var(--transition);
+}
+.badge {
+    align-self: flex-start; padding: 4px 12px; border-radius: 12px;
+    font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.1); color: var(--text-main);
+}
+.card-title { font-size: 18px; font-weight: 600; }
+.card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 15px; }
+.card-value { color: var(--accent-gold); font-weight: 600; font-size: 15px; }
+.link-readmore { color: var(--text-muted); text-decoration: none; font-size: 13px; }
+.link-readmore:hover { color: var(--accent-gold); }
+
+/* Desktop View */
+@media (min-width: 768px) {
+    .welfare-page { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+    .welfare-header { max-width: 600px; margin: 0 auto 40px; }
+    .filter-tags { justify-content: center; flex-wrap: wrap; }
+    .grid-container { grid-template-columns: repeat(2, 1fr); display: grid; gap: 30px; }
+    .welfare-card:hover { transform: translateY(-5px); border-color: rgba(255,178,0,0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+}
+@media (min-width: 1024px) {
+    .grid-container { grid-template-columns: repeat(3, 1fr); }
+}

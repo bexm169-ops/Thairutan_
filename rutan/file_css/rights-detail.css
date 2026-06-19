@@ -1,0 +1,40 @@
+/* ==========================================================================
+   PAGE: RIGHTS DETAIL (รายละเอียดสิทธิ์)
+   ========================================================================== */
+.detail-container { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+.back-link { color: var(--text-muted); text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 10px; transition: var(--transition); }
+.back-link:hover { color: var(--text-main); }
+
+.detail-header-card {
+    background-color: var(--bg-surface); padding: 30px 20px; border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+}
+.badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; background: rgba(49, 130, 206, 0.2); color: #63b3ed; }
+.project-title { font-size: 24px; margin: 15px 0 10px; line-height: 1.3; }
+.project-subtitle { font-size: 14px; color: var(--text-muted); }
+
+.info-block { background-color: var(--bg-surface); padding: 25px 20px; border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid var(--border-light); }
+.info-block h2 { font-size: 18px; margin-bottom: 15px; color: var(--accent-gold); }
+.info-block p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.check-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.check-list li { position: relative; padding-left: 20px; color: var(--text-muted); font-size: 14px; line-height: 1.5; }
+.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-green); font-weight: bold; }
+
+.action-sidebar {
+    background-color: var(--bg-surface-hover); padding: 25px; border-radius: var(--radius-md);
+    border: 1px solid var(--accent-gold); text-align: center;
+}
+.status-bar { font-size: 13px; color: var(--accent-green); margin-bottom: 15px; }
+.status-bar .dot { display: inline-block; width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; margin-right: 5px; }
+.benefit-highlight h3 { font-size: 22px; margin-bottom: 5px; }
+.benefit-highlight p { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.4; }
+.action-form p { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; }
+.btn-primary-full { width: 100%; margin-bottom: 10px; }
+.btn-secondary-full { width: 100%; }
+
+/* Desktop View */
+@media (min-width: 768px) {
+    .detail-container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+    .detail-content-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; margin-top: 10px; }
+    .action-sidebar { position: sticky; top: 100px; } /* ให้กล่องขวาลอยตามเวลาเลื่อนจอ */
+}

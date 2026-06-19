@@ -1,0 +1,144 @@
+/* ==========================================================================
+   [ส่วนกลาง] VARIABLES, HEADER & FOOTER
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-base: #030d1a;
+    --bg-surface: #06152b;
+    --bg-surface-hover: #0b2240;
+    --border-light: rgba(255, 255, 255, 0.08);
+    --accent-gold: #ffb200;
+    --accent-gold-hover: #e09d00;
+    --accent-green: #68d391;
+    --text-main: #ffffff;
+    --text-muted: #a0aec0;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Sarabun', sans-serif; }
+body { background-color: #11213B; color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; padding-top: 100px; overflow-x: hidden; }
+
+/* ── ปุ่มกดมาตรฐาน ── */
+.btn-primary, .btn-secondary, .btn-check-now, .btn-login, .btn-search, .btn-primary-full, .btn-secondary-full {
+    display: inline-flex; justify-content: center; align-items: center; padding: 12px 24px;
+    border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: var(--transition); cursor: pointer; border: none; white-space: nowrap;
+}
+.btn-primary, .btn-check-now, .btn-search, .btn-primary-full { background-color: var(--accent-gold); color: #000; }
+.btn-primary:hover, .btn-check-now:hover, .btn-search:hover, .btn-primary-full:hover { background-color: var(--accent-gold-hover); transform: translateY(-2px); }
+.btn-secondary, .btn-secondary-full { background-color: var(--border-light); color: var(--text-main); }
+.btn-secondary:hover, .btn-secondary-full:hover { background-color: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+
+/* ── Header ── */
+.main-header {
+    background-color: rgba(6, 21, 43, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+}
+.header-container {
+    padding: 15px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+}
+
+.logo-section { display: flex; align-items: center; gap: 12px; flex-shrink: 0;}
+.logo-icon {
+    background-color: var(--accent-gold); color: var(--bg-base); font-weight: 700;
+    width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;
+    border-radius: var(--radius-sm); flex-shrink: 0;
+}
+.logo-text { display: flex; flex-direction: column; }
+.logo-title { font-size: 16px; font-weight: 700; display: block; line-height: 1.1; }
+.logo-subtitle { font-size: 11px; color: var(--text-muted); }
+
+/* ── Mobile Sidebar ── */
+.menu-toggle { display: flex; flex-direction: column; gap: 5px; background: transparent; border: none; cursor: pointer; }
+.menu-toggle span { display: block; width: 24px; height: 3px; background-color: var(--accent-gold); border-radius: 3px; }
+.nav-menu {
+    position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+    background-color: var(--bg-surface); padding: 80px 20px;
+    transition: var(--transition); z-index: 1050;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+    display: flex; flex-direction: column;
+}
+.nav-menu.active { right: 0; }
+.menu-close { position: absolute; top: 20px; right: 20px; font-size: 30px; background: transparent; border: none; color: var(--text-muted); cursor: pointer; }
+.nav-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.nav-links a { display: block; padding: 12px 15px; color: var(--text-main); text-decoration: none; font-size: 16px; border-radius: var(--radius-sm); }
+.nav-links a.active { color: var(--accent-gold); font-weight: 600; }
+.auth-actions { margin-top: auto; display: flex; flex-direction: column; gap: 15px; }
+
+/* ── สถานะผู้ใช้ที่ล็อกอินแล้ว (แสดงทั้ง mobile/desktop เหมือนกัน) ── */
+.user-greeting {
+    font-size: 13px; color: var(--text-muted);
+    display: flex; align-items: center; white-space: nowrap;
+}
+
+/* ── Footer ── */
+.main-footer { background-color:#11213B; border-top: 1px solid var(--border-light); padding: 20px; text-align: center; margin-top: auto; }
+.main-footer p { font-size: 12px; color: var(--text-muted); }
+
+/* ── Desktop Header ──
+   ใช้ flexbox ล้วน ไม่มี position:relative + % hack
+   เพื่อให้ layout เสถียรไม่ว่าผู้ใช้จะล็อกอินหรือไม่ ชื่อยาวหรือสั้น
+*/
+@media (min-width: 768px) {
+    .menu-toggle, .menu-close { display: none; }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        list-style: none;
+        margin-left: 30px;
+    }
+    .nav-links a {
+        padding: 8px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+        color: var(--text-main);
+        transition: color 0.3s ease;
+    }
+    .nav-links a:hover { background-color: transparent; color: var(--accent-gold); }
+
+    .auth-actions {
+        flex-direction: row;
+        align-items: center;
+        margin-top: 0;
+        margin-left: auto;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .btn-login {
+        background: transparent;
+        border: 1px solid var(--border-light);
+        color: var(--text-main);
+    }
+    .btn-login:hover { background: rgba(255,255,255,0.1); }
+}
